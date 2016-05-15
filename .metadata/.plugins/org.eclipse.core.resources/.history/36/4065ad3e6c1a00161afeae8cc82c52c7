@@ -1,0 +1,12 @@
+package utils;
+
+import java.io.File;
+
+public class UtilDirDisplay {
+	
+	public static byte[] getHTML(String dir) {
+		String result = "";
+		File root = new File(dir);
+		return null;
+	}
+}

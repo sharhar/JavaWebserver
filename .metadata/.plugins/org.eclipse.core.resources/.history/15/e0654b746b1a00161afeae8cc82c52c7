@@ -9,14 +9,11 @@ public class Start {
 		int port = 80;
 		String root = "C:\\Users\\wiish\\Git\\JavaWebserver\\website";
 		boolean log = true;
-		
-		
-		CoreServer core = new CoreServer(port, root, log);
+		CoreServer core = new CoreServer(80, "C:\\Users\\wiish\\Git\\JavaWebserver\\website", true);
 		core.start();
 		
 		Scanner scan = new Scanner(System.in);
 		boolean running = true;
-		
 		while(running) {
 			String input = scan.nextLine();
 			if(input.equals("exit")) {
@@ -24,11 +21,10 @@ public class Start {
 			} else if (input.equals("restart")) {
 				System.out.println("==============RESTARTING=============");
 				core.stop();
-				core = new CoreServer(port, root, log);
+				core = new CoreServer(80, "C:\\Users\\wiish\\Git\\JavaWebserver\\website", true);
 				core.start();
 			}
 		}
-		
 		scan.close();
 		core.stop();
 	}

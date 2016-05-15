@@ -9,8 +9,6 @@ import java.nio.file.Path;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import utils.UtilDirDisplay;
-
 class CoreHandler implements HttpHandler{
 	String root;
 	
@@ -19,11 +17,9 @@ class CoreHandler implements HttpHandler{
 	}
 	
 	public static byte[] readHTMLFile(HttpExchange ex, String root) {
-		String dir = root + ex.getRequestURI().toString().replace("%20", " ");
-		File file = new File(dir);
+		File file = new File(root + ex.getRequestURI().toString().replace("%20", " "));
 		if(file.isDirectory()) {
-			//file = new File(root + ex.getRequestURI().toString().replace("%20", " ") + "/index.html");
-			return UtilDirDisplay.getHTML(dir);
+			file = new File(root + ex.getRequestURI().toString().replace("%20", " ") + "/index.html");
 		}
 		Path path = file.toPath();
 		byte[] bytes = null;

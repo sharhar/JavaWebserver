@@ -1,0 +1,10 @@
+package utils;
+
+import com.sun.net.httpserver.HttpExchange;
+
+public class UtilDirDisplay {
+	
+	public static byte[] getHTML(HttpExchange ex, String root) {
+		return null;
+	}
+}

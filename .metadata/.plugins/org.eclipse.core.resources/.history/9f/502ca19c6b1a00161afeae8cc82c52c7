@@ -16,7 +16,6 @@ public class Start {
 		
 		Scanner scan = new Scanner(System.in);
 		boolean running = true;
-		
 		while(running) {
 			String input = scan.nextLine();
 			if(input.equals("exit")) {
@@ -28,7 +27,6 @@ public class Start {
 				core.start();
 			}
 		}
-		
 		scan.close();
 		core.stop();
 	}

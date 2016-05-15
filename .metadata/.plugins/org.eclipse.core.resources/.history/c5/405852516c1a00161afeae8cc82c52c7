@@ -1,0 +1,16 @@
+package utils;
+
+import java.io.File;
+
+public class UtilDirDisplay {
+	
+	public static byte[] getHTML(String dir) {
+		String result = "";
+		File root = new File(dir);
+		File[] files = root.listFiles();
+		for(File file:files) {
+			
+		}
+		return null;
+	}
+}

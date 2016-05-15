@@ -9,14 +9,11 @@ public class Start {
 		int port = 80;
 		String root = "C:\\Users\\wiish\\Git\\JavaWebserver\\website";
 		boolean log = true;
-		
-		
 		CoreServer core = new CoreServer(port, root, log);
 		core.start();
 		
 		Scanner scan = new Scanner(System.in);
 		boolean running = true;
-		
 		while(running) {
 			String input = scan.nextLine();
 			if(input.equals("exit")) {
@@ -28,7 +25,6 @@ public class Start {
 				core.start();
 			}
 		}
-		
 		scan.close();
 		core.stop();
 	}

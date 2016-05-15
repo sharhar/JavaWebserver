@@ -1,0 +1,10 @@
+package utils;
+
+public class UtilDirDisplay {
+	
+	public static byte[] getHTML(String dir) {
+		String result = "";
+		
+		return null;
+	}
+}
