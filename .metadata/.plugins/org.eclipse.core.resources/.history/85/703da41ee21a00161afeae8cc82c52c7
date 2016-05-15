@@ -41,20 +41,8 @@ public class CoreUtils {
 
 	public static byte[] getNav(File root, String uri) {
 		String[] navParts = readLocalFile("res/nav.html").split("SEPERATOR");
-		String back = "";
-		if(!uri.equals("/")) {
-			String[] uriParts = uri.split("/");
-			if(uriParts.length > 2) {
-				for(int i = 2;i < uriParts.length;i++) {
-					back += "/" + uriParts[i-1];
-				}
-			} else {
-				back = "/";
-			}
-			
-		} else {
-			back = "/";
-		}
+		String back = uri;
+		
 		String result = navParts[0].replace("[directory]", uri).replace("[bimg]", backImage).replace("[back]", back);
 
 		File[] files = root.listFiles();

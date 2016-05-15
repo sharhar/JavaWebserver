@@ -26,7 +26,7 @@
 			}
 			
 			a {
-				color: blue;
+				color: darkblue;
 				text-decoration:none;
 			}
 		</style>
@@ -39,7 +39,7 @@
 
 		<div id="body">
 
-			<table style="width:70%" class ="nav">
+			<table style="width:70%" class ="nav" border="1">
 				<tr>
 					<td></td>
 					<td class="lable">Name</td>

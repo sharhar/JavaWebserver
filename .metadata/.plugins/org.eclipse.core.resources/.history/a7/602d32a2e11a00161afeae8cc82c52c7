@@ -20,15 +20,6 @@
 				padding: 0px;
 				font-weight: bold;
 			}
-			
-			.back {
-				font-size: 18px;
-			}
-			
-			a {
-				color: blue;
-				text-decoration:none;
-			}
 		</style>
 	</head>
 
@@ -39,7 +30,7 @@
 
 		<div id="body">
 
-			<table style="width:70%" class ="nav">
+			<table style="width:70%" class ="nav" border="1">
 				<tr>
 					<td></td>
 					<td class="lable">Name</td>
@@ -48,7 +39,7 @@
 				
 				<tr>
 					<td><img src="[bimg]" height="32" width = "32"></td>
-					<td><a href="[back]" class="back">Back</a></td>
+					<td><a href="[back]" class="back">..</a></td>
 					<td>-</td>
 				</tr>
 SEPERATOR
