@@ -15,6 +15,7 @@ public class Start {
 			if(args.length > 1) {
 				port = Integer.parseInt(args[1]);
 			}
+			
 		}
 		
 		CoreServer core = new CoreServer(port, root, log);
