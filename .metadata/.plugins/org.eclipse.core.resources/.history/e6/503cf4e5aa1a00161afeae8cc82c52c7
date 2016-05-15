@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>
+			My webserver
+		</title>
+		<style>
+			body {
+			    background-color: lightgray;
+			    font-family: arial;
+			}
+
+			.header {
+			    color: Black;
+			    margin-left: 10px;
+			    font-size: 24px;
+			}
+
+			.lable {
+				font-size: 20px;
+				padding: 0px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			<h1>[directory]</h1>
+		</div>
+
+		<div id="body">
+
+			<table style="width:56%" class="lable">
+				<tr>
+					<td>Name</td>
+					<td>Size</td>
+				</tr>
+			</table>
+
+			<table style="width:70%" class ="nav" border="1">
+					<tr>
+						<td><a href="#">[file 1]</a></td>
+						<td>[size 1]</td>
+					</tr>
+					<tr>
+						<td><a href="#">[file 2]</a></td>
+						<td>[size 2]</td>
+					</tr>
+					<tr>
+						<td><a href="#">[dir 1]</a></td>
+						<td>-</td>
+					</tr>
+			</table>
+		</div>
+	</body>
+</html>

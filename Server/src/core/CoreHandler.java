@@ -3,13 +3,9 @@ package core;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-
-import utils.UtilDirDisplay;
 
 class CoreHandler implements HttpHandler{
 	String root;
@@ -19,20 +15,19 @@ class CoreHandler implements HttpHandler{
 	}
 	
 	public static byte[] readHTMLFile(HttpExchange ex, String root) {
-		String dir = root + ex.getRequestURI().toString().replace("%20", " ");
+		String URI = ex.getRequestURI().toString();
+		String dir = root + URI.replace("%20", " ");
 		File file = new File(dir);
-		if(file.isDirectory()) {
-			//file = new File(root + ex.getRequestURI().toString().replace("%20", " ") + "/index.html");
-			return UtilDirDisplay.getHTML(dir);
+		boolean isFile = file.isFile();
+		boolean isDir = file.isDirectory();
+		if(isFile) {
+			return CoreUtils.readFile(file);
+		} else if(isDir) {
+			return CoreUtils.getNav(file, URI);
+		} else if (!isFile && !isDir) {
+			CoreUtils.error(URI);
 		}
-		Path path = file.toPath();
-		byte[] bytes = null;
-		try {
-			bytes = Files.readAllBytes(path);
-		} catch (IOException e) {
-			CoreUtils.log("Could not find file: " + file.getPath(), System.err);
-		}
-		return bytes;
+		throw new IllegalStateException("Could not identify path type");
 	}
 	
 	public void handle(HttpExchange ex) throws IOException {
