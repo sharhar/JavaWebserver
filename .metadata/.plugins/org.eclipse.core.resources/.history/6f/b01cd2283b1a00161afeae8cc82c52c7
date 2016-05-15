@@ -1,0 +1,24 @@
+package core;
+
+import java.net.InetSocketAddress;
+
+import com.sun.net.httpserver.HttpServer;
+
+public class CoreServer implements Runnable{
+	HttpServer server;
+	int port;
+	Thread thread;
+	
+	public CoreServer(int port) {
+		this.port = port;
+		this.thread = new Thread(this);
+	}
+	
+	public void start() {
+		thread.start();
+	}
+	
+	public void run() {
+		server = HttpServer.create(new InetSocketAddress(port), 0);
+	}
+}

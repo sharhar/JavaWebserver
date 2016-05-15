@@ -1,0 +1,20 @@
+package core;
+
+import com.sun.net.httpserver.HttpServer;
+
+public class CoreServer implements Runnable{
+	HttpServer server;
+	int port;
+	
+	public CoreServer(int port) {
+		this.port = port;
+	}
+	
+	public void start() {
+		
+	}
+	
+	public void run() {
+		
+	}
+}

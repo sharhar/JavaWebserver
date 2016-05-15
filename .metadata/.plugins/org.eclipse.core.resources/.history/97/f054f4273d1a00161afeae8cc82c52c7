@@ -1,0 +1,45 @@
+package core;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+
+import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpServer;
+
+public class CoreServer{
+	HttpServer server;
+	int port;
+	boolean log;
+	
+	public CoreServer(int port) {
+		this(port, false);
+	}
+	
+	public void log(String message) {
+		System.out.println(message);
+	}
+	
+	public CoreServer(int port, boolean log) {
+		this.port = port;
+		this.log = log;
+	}
+	
+	public void start() {
+		try {
+			server = HttpServer.create(new InetSocketAddress(port), 0);
+			log("Started server at " + port);
+			server.createContext("/");
+			server.start();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	class Handler implements HttpHandler{
+		
+	}
+	
+	public void stop() {
+		server.stop(1);
+	}
+}

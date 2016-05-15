@@ -1,0 +1,18 @@
+package start;
+
+import java.util.Scanner;
+
+import core.CoreServer;
+
+public class Start {
+	public static void main(String[] args) {
+		CoreServer core = new CoreServer(90000, true);
+		core.start();
+		
+		Scanner scan = new Scanner(System.in);
+		boolean running = true;
+		while(running) {
+			String input = scan.nextLine();
+		}
+	}
+}

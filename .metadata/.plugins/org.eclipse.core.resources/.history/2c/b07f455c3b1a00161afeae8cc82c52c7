@@ -1,0 +1,40 @@
+package core;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+
+import com.sun.net.httpserver.HttpServer;
+
+public class CoreServer implements Runnable{
+	HttpServer server;
+	int port;
+	Thread thread;
+	boolean log;
+	
+	public CoreServer(int port) {
+		this(port, false);
+	}
+	
+	public void log() {
+		
+	}
+	
+	public CoreServer(int port, boolean log) {
+		this.port = port;
+		this.thread = new Thread(this);
+		this.log = log;
+	}
+	
+	public void start() {
+		thread.start();
+	}
+	
+	public void run() {
+		try {
+			server = HttpServer.create(new InetSocketAddress(port), 0);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

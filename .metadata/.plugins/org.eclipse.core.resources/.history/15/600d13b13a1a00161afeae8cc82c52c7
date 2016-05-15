@@ -1,0 +1,13 @@
+package core;
+
+import com.sun.net.httpserver.HttpServer;
+
+public class CoreServer {
+	HttpServer server;
+	
+	public CoreServer() {
+		
+	}
+	
+	
+}

@@ -1,0 +1,54 @@
+package core;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+
+import com.sun.net.httpserver.HttpServer;
+
+public class CoreServer implements Runnable{
+	HttpServer server;
+	int port;
+	Thread thread;
+	boolean log;
+	boolean running;
+	
+	public CoreServer(int port) {
+		this(port, false);
+	}
+	
+	public void log(String message) {
+		
+	}
+	
+	public CoreServer(int port, boolean log) {
+		this.port = port;
+		this.thread = new Thread(this);
+		this.log = log;
+	}
+	
+	public void start() {
+		running = true;
+		thread.start();
+	}
+	
+	public void stop() {
+		try {
+			
+			thread.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void run() {
+		try {
+			server = HttpServer.create(new InetSocketAddress(port), 0);
+			log("Started server at " + port);
+			server.createContext("/");
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

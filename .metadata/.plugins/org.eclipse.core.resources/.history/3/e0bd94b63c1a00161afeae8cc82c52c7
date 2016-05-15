@@ -1,0 +1,15 @@
+package start;
+
+import core.CoreServer;
+
+public class Start {
+	public static void main(String[] args) {
+		CoreServer core = new CoreServer(90000, true);
+		core.start();
+		
+		boolean running = true;
+		while(running) {
+			
+		}
+	}
+}
