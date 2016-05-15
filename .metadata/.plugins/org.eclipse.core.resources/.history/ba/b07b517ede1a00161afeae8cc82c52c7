@@ -39,7 +39,7 @@
 SEPERATOR
 					<tr>
 						<td><img src="[img]" height="32" width="32"></td>
-						<td><a href="[root][file]">[file]</a></td>
+						<td><a href="[file]">[file]</a></td>
 						<td>[size]</td>
 					</tr>
 SEPERATOR

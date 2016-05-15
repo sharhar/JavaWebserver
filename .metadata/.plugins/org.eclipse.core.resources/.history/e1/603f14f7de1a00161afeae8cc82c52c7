@@ -65,16 +65,13 @@ public class CoreUtils {
 			}
 			
 			String table = navParts[1].replace("[file]", name).replace("[size]", size).replace("[img]", image);
-			if(uri.equals("/")) {
-				table = table.replace("[root]", "/");
-			} else {
-				table = table.replace("[root]", uri + "/");
-			}
 			
-			result += table;
+			result += navParts[1].replace("[file]", name).replace("[size]", size).replace("[img]", image).replace("[root]", uri);
 		}
 		
 		result += navParts[2];
+		
+		System.out.println(result);
 		
 		return result.getBytes();
 	}

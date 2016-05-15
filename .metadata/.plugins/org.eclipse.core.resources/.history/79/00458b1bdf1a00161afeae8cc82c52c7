@@ -76,6 +76,8 @@ public class CoreUtils {
 		
 		result += navParts[2];
 		
+		System.out.println(result);
+		
 		return result.getBytes();
 	}
 	

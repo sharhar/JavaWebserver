@@ -68,13 +68,15 @@ public class CoreUtils {
 			if(uri.equals("/")) {
 				table = table.replace("[root]", "/");
 			} else {
-				table = table.replace("[root]", uri + "/");
+				table = table.replace("[root]", uri);
 			}
 			
 			result += table;
 		}
 		
 		result += navParts[2];
+		
+		System.out.println(result);
 		
 		return result.getBytes();
 	}
