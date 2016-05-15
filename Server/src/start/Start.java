@@ -15,9 +15,14 @@ public class Start {
 			String input = scan.nextLine();
 			if(input.equals("exit")) {
 				running = false;
+			} else if (input.equals("restart")) {
+				System.out.println("==============RESTARTING=============");
 				core.stop();
+				core = new CoreServer(80, "C:\\Users\\wiish\\Git\\JavaWebserver\\website", true);
+				core.start();
 			}
 		}
 		scan.close();
+		core.stop();
 	}
 }
