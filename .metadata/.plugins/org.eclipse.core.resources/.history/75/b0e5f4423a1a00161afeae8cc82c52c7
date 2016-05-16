@@ -1,7 +1,0 @@
-package core;
-
-import com.sun.net.httpserver.spi;
-
-public class CoreServer {
-	
-}
